@@ -24,21 +24,20 @@ class Storage {
         this.flowers[size][type]++;
     }
 
-    getRandomFlowersSpec(size, amount) {
+    getRandomFlowersSpec(amount, size) {
         var result = [];
-        for (var type in this.flowers[size]) {
+        for (var type in this.flowers[size]) {  
             var avaliable = this.flowers[size][type];
             if (avaliable >= amount) {
-                flowers[size][type] -= amount;
-                amount = 0;
+                this.flowers[size][type] -= amount;                
                 this.count -= amount;
                 result.push(new FlowerSpec(type, amount));
                 return result;
-            } else {
+            } else if (avaliable != 0) {
                 amount -= avaliable;
                 this.count -= avaliable;
-                flowers[size][type] = 0;
-                result.push(new FlowerSpec(type, amount));
+                this.flowers[size][type] = 0;
+                result.push(new FlowerSpec(type, avaliable));
             }            
         }        
     }
