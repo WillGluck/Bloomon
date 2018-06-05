@@ -1,0 +1,8 @@
+{
+  "name": "Bloomon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:WillGluck/Bloomon.git",
+  "author": "Will Glück <bigwillgluck@gmail.com>",
+  "license": "MIT"
+}
